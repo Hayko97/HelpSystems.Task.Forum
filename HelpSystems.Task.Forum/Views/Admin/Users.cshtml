@@ -1,0 +1,59 @@
+﻿@model PagedList.IPagedList<HelpSystems.Task.Forum.Repository.Entities.User>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Users</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Username
+        </th>
+        <th>
+            City
+        </th>
+        <th>
+            Country
+        </th>
+        <th>
+           Role
+        </th>
+        <th>
+            Registration Date
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Roles)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegisterDate)
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger" onclick="deleteUser(this)" data-id="@item.Id"><i class="glyphicon glyphicon-remove" ></i>Remove</button>
+            </td>
+
+        </tr>
+    }
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    <p>
+        @Html.PagedListPager(Model, page => Url.Action("Users", new { page = page }), PagedListRenderOptions.PageNumbersOnly)
+    </p>
+</table>

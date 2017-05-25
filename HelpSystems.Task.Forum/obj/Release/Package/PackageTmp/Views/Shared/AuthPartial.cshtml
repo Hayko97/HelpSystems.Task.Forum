@@ -1,0 +1,91 @@
+﻿@using HelpSystems.Task.Forum.Managers
+@if (!User.Identity.IsAuthenticated)
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <a href="http://phpoll.com/register" class="dropdown-toggle" data-toggle="dropdown">Register <span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
+                <div class="col-lg-12">
+                    <div class="text-center"><h3><b>Register</b></h3></div>
+                    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "RegisterForm", data_toggle = "validator", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <input type="text" required name="Username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                            <div class="errorMessage"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" required name="Country" id="country" tabindex="1" class="form-control" placeholder="Country" value="">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" required name="City" id="city" tabindex="1" class="form-control" placeholder="City" value="">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" data-minlength="6" required name="Password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                            <div class="help-block">Minimum of 6 characters</div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" required name="ConfirmPassword" data-match="#password" data-match-error="Whoops, these don't match" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-6 col-xs-offset-3">
+                                    <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-info" value="Register Now">
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="http://phpoll.com/login" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
+                <div class="col-lg-12">
+                    <div class="text-center"><h3><b>Log In</b></h3></div>
+                    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "LoginForm", data_toggle = "validator", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <label for="Username">Username</label>
+                            <input type="text" required name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="Password">Password</label>
+                            <input type="password" name="Password" id="password" tabindex="2" class="form-control" placeholder="Password" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+
+                                <div class="col-xs-5 pull-right">
+                                    <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" value="Log In">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    }
+                </div>
+            </ul>
+        </li>
+    </ul>
+
+
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li><a>You are logged-in as: @User.Identity.Name </a></li>
+        <li>
+           @using (Html.BeginForm("LogOut", "Account", FormMethod.Post))
+           {
+                @Html.AntiForgeryToken()
+                <input type="submit" class="logout" value="Log Out">
+           }
+        </li>
+
+    </ul>
+}

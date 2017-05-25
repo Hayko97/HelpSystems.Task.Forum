@@ -1,0 +1,56 @@
+﻿@model PagedList.IPagedList<HelpSystems.Task.Forum.Repository.Entities.Thread>
+@using PagedList.Mvc
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Index";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            Username
+        </th>
+        <th>
+            Topic Name
+        </th>
+        <th>
+            Thread Title
+        </th>
+        <th>
+            Thread Description
+        </th>
+        <th>
+            IsClosed
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Topic.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsClosed)
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger" onclick="deleteThread(this)" data-id="@item.Id"><i class="glyphicon glyphicon-remove"></i>Remove</button>
+            </td>
+
+        </tr>
+    }
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    <p>
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }), PagedListRenderOptions.PageNumbersOnly)
+    </p>
+</table>

@@ -1,0 +1,5 @@
+C:\Users\Gurgen\Documents\Visual Studio 2015\Projects\HelpSystems.Task.Forum\HelpSystems.Task.Forum.Core\bin\Release\HelpSystems.Task.Forum.Core.dll.config
+C:\Users\Gurgen\Documents\Visual Studio 2015\Projects\HelpSystems.Task.Forum\HelpSystems.Task.Forum.Core\bin\Release\HelpSystems.Task.Forum.Core.dll
+C:\Users\Gurgen\Documents\Visual Studio 2015\Projects\HelpSystems.Task.Forum\HelpSystems.Task.Forum.Core\bin\Release\HelpSystems.Task.Forum.Core.pdb
+C:\Users\Gurgen\Documents\Visual Studio 2015\Projects\HelpSystems.Task.Forum\HelpSystems.Task.Forum.Core\obj\Release\HelpSystems.Task.Forum.Core.dll
+C:\Users\Gurgen\Documents\Visual Studio 2015\Projects\HelpSystems.Task.Forum\HelpSystems.Task.Forum.Core\obj\Release\HelpSystems.Task.Forum.Core.pdb

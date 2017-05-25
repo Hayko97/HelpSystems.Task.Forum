@@ -1,0 +1,21 @@
+﻿@model HelpSystems.Task.Forum.Repository.Entities.Post
+
+
+
+@if (Model == null)
+{
+    <h5>No posts yet</h5>
+}
+else
+{
+    if (ViewBag.InMain)
+    {
+        <h5>Last Post: @Model.Description</h5>
+    }
+    else
+    {
+        <h4>Last posted by: @Model.User.Username</h4>
+    }
+    <p>Last posted on @Model.Date.ToString()</p>
+    <small>Replies: @ViewBag.PostCount</small>
+}

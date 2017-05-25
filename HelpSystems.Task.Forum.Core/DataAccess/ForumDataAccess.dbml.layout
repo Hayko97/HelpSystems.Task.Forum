@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ForumDataAccess">
+  <DataContextMoniker Name="/ForumDataAccessDataContext" />
+  <nestedChildShapes>
+    <classShape Id="95d88d2b-b0b2-4d0d-a50c-9f91f5b25783" absoluteBounds="3.5, 3.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/ForumDataAccessDataContext/Post" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4e3ddfe4-d44a-4992-9cef-bc06f150a7ca" absoluteBounds="3.515, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0d8e68a2-6c5d-453e-8056-547e6979da34" absoluteBounds="0.75, 1.625, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/ForumDataAccessDataContext/Topic" />
+      <nestedChildShapes>
+        <elementListCompartment Id="68f656da-375c-4cc5-a628-9ba1070d66a1" absoluteBounds="0.765, 2.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d9998b43-80b4-4fff-bcf7-db0b34f154eb" absoluteBounds="0.75, 3.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ForumDataAccessDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d7b89c76-e160-4619-a1b8-7a2dd6eace80" absoluteBounds="0.765, 4.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.73159912109375); (3.5 : 4.73159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ForumDataAccessDataContext/User/User_Post" />
+      <nodes>
+        <classShapeMoniker Id="d9998b43-80b4-4fff-bcf7-db0b34f154eb" />
+        <classShapeMoniker Id="95d88d2b-b0b2-4d0d-a50c-9f91f5b25783" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5cb4cba0-c6ef-4ef7-886a-aab377411ae0" absoluteBounds="3.75, 1.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ForumDataAccessDataContext/Thread" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ce69055-5a6e-4818-955c-d0753b750b40" absoluteBounds="3.7649999999999997, 1.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.625 : 3.53049967447917); (4.625 : 3.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ForumDataAccessDataContext/Thread/Thread_Post" />
+      <nodes>
+        <classShapeMoniker Id="5cb4cba0-c6ef-4ef7-886a-aab377411ae0" />
+        <classShapeMoniker Id="95d88d2b-b0b2-4d0d-a50c-9f91f5b25783" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.22199625651042); (3.75 : 2.22199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ForumDataAccessDataContext/Topic/Topic_Thread" />
+      <nodes>
+        <classShapeMoniker Id="0d8e68a2-6c5d-453e-8056-547e6979da34" />
+        <classShapeMoniker Id="5cb4cba0-c6ef-4ef7-886a-aab377411ae0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 3.625); (1.75 : 3.06899251302083); (3 : 3.06899251302083); (3 : 2.90749996549479); (3.75 : 2.90749996549479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ForumDataAccessDataContext/User/User_Thread" />
+      <nodes>
+        <classShapeMoniker Id="d9998b43-80b4-4fff-bcf7-db0b34f154eb" />
+        <classShapeMoniker Id="5cb4cba0-c6ef-4ef7-886a-aab377411ae0" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

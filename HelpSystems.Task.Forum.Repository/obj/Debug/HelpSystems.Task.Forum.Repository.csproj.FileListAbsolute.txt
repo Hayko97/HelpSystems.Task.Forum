@@ -1,0 +1,6 @@
+C:\Users\Gurgen\Documents\Visual Studio 2015\Projects\HelpSystems.Task.Forum\HelpSystems.Task.Forum.Repository\bin\Debug\HelpSystems.Task.Forum.Repository.dll.config
+C:\Users\Gurgen\Documents\Visual Studio 2015\Projects\HelpSystems.Task.Forum\HelpSystems.Task.Forum.Repository\bin\Debug\HelpSystems.Task.Forum.Repository.dll
+C:\Users\Gurgen\Documents\Visual Studio 2015\Projects\HelpSystems.Task.Forum\HelpSystems.Task.Forum.Repository\bin\Debug\HelpSystems.Task.Forum.Repository.pdb
+C:\Users\Gurgen\Documents\Visual Studio 2015\Projects\HelpSystems.Task.Forum\HelpSystems.Task.Forum.Repository\obj\Debug\HelpSystems.Task.Forum.Repository.csprojResolveAssemblyReference.cache
+C:\Users\Gurgen\Documents\Visual Studio 2015\Projects\HelpSystems.Task.Forum\HelpSystems.Task.Forum.Repository\obj\Debug\HelpSystems.Task.Forum.Repository.dll
+C:\Users\Gurgen\Documents\Visual Studio 2015\Projects\HelpSystems.Task.Forum\HelpSystems.Task.Forum.Repository\obj\Debug\HelpSystems.Task.Forum.Repository.pdb

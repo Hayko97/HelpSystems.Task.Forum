@@ -1,0 +1,44 @@
+﻿@model IEnumerable<HelpSystems.Task.Forum.Core.DataAccess.Topic>
+
+@{
+    ViewBag.Title = "Topics";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Topics</h2>
+
+<div class="row">
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="col-md-9">
+            <input type="text" name="name" class="form-control">
+        </div>
+        <div class="col-md-3">
+            <input type="submit" class="btn btn-primary">
+        </div>
+    }
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td >
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a class="topicRemove" onclick="RemoveTopic(this)" data-topic="@item.Id"><i class="glyphicon glyphicon-remove" ></i>Remove</a>
+            </td>
+
+        </tr>
+    }
+
+</table>
