@@ -11,22 +11,22 @@
 
 namespace HelpSystems.Task.Forum.Repository.Entities
 {
-	using System.Data.Linq;
-	using System.Data.Linq.Mapping;
-	using System.Data;
-	using System.Collections.Generic;
-	using System.Reflection;
-	using System.Linq;
-	using System.Linq.Expressions;
-	using System.ComponentModel;
-	using System;
-	
-	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ForumDb")]
+    using System.Data.Linq;
+    using System.Data.Linq.Mapping;
+    using System.Data;
+    using System.Collections.Generic;
+    using System.Reflection;
+    using System.Linq;
+    using System.Linq.Expressions;
+    using System.ComponentModel;
+    using System;
+    using System.Web;
+
+    [global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ForumDb")]
 	public partial class ForumDataContextDataContext : System.Data.Linq.DataContext
 	{
-		
-		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
+        static string path = HttpContext.Current.Server.MapPath("~/App_Data/ForumDb.mdf");
+        private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
@@ -45,7 +45,7 @@ namespace HelpSystems.Task.Forum.Repository.Entities
     #endregion
 		
 		public ForumDataContextDataContext() : 
-				base(global::HelpSystems.Task.Forum.Repository.Properties.Settings.Default.ForumDbConnectionString, mappingSource)
+				base("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename="+ path + ";Integrated Security=True", mappingSource)
 		{
 			OnCreated();
 		}
